@@ -40,10 +40,10 @@ const Square = ({ id, player, newState }) => { //destructuring props to access i
   const Board = () => {
     const [player, setPlayer] = React.useState(false);
     const [state, setState] = React.useState([null,null,null,null,null,null,null,null,null]); //Array(9).fill(null)
-    let status = `Player ${Number(player)}'s turn`;
+    let status = `Player ${Number(player) + 1}'s turn`;
     let winner = checkWinner(state);
     console.log("checking for winner")
-    if(winner != null) status = `Player ${winner} wins!`
+    if(winner != null) status = `Player ${winner + 1} wins!`
     
     // with the lines of code below the incorrect winner is returned
     const newState = (id) => {
